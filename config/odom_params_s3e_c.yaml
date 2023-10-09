@@ -1,0 +1,60 @@
+co_lrio:
+  # Topics
+  pointCloudTopic: "velodyne_points"               # Point cloud data
+  imuTopic: "imu/data"                         # IMU data
+  odomTopic: "odometry/imu"                   # IMU pre-preintegration odometry, same frequency as IMU
+
+  # Frames
+  lidarFrame: "base_link"
+  baselinkFrame: "base_link"
+  odometryFrame: "odom"
+  
+  # Sensor Settings
+  sensor: velodyne                            # lidar sensor type, 'velodyne' or 'ouster' or 'livox'
+  N_SCAN: 16                                  # number of lidar channel (i.e., Velodyne/Ouster: 16, 32, 64, 128, Livox Horizon: 6)
+  Horizon_SCAN: 1800                          # lidar horizontal resolution (Velodyne:1800, Ouster:512,1024,2048, Livox Horizon: 4000)
+  downsampleRate: 1                           # default: 1. Downsample your data if too many points. i.e., 16 = 64 / 4, 16 = 16 / 1
+  lidarMinRange: 1.0                          # default: 1.0, minimum lidar range to be used
+  lidarMaxRange: 1000.0                       # default: 1000.0, maximum lidar range to be used
+
+  # IMU Settings
+  imuAccNoise: 1.1692699862662088e-02
+  imuGyrNoise: 1.0216647894856925e-02
+  imuAccBiasN: 2.0413058951725431e-04
+  imuGyrBiasN: 8.4514305618965801e-05 
+  imuGravity: 9.79172227
+  imuRPYWeight: 0.01
+
+  # Extrinsics: T_lb (lidar -> imu)
+  extrinsicTrans: [0.007784371906518, -0.204024496061082, -0.029045411719168]
+  extrinsicRot: [0.999555271477470, -0.022144088840141, 0.019972284013500,
+                  0.021811658159079, 0.999622421673814, 0.016711502850279,
+                  -0.020334812152698, -0.016268440573027, 0.999660862885093]
+  extrinsicRPY: [0.999555271477470, -0.022144088840141, 0.019972284013500,
+                  0.021811658159079, 0.999622421673814, 0.016711502850279,
+                  -0.020334812152698, -0.016268440573027, 0.999660862885093]
+
+  # LOAM feature threshold
+  edgeThreshold: 1.0
+  surfThreshold: 0.1
+  edgeFeatureMinValidNum: 10
+  surfFeatureMinValidNum: 100
+
+  # voxel filter paprams
+  odometrySurfLeafSize: 0.4                     # default: 0.4 - outdoor, 0.2 - indoor
+  mappingCornerLeafSize: 0.2                    # default: 0.2 - outdoor, 0.1 - indoor
+  mappingSurfLeafSize: 0.4                      # default: 0.4 - outdoor, 0.2 - indoor
+
+  # robot motion constraint (in case you are using a 2D robot)
+  z_tollerance: 1000                            # meters
+  rotation_tollerance: 1000                     # radians
+
+  # CPU Params
+  numberOfCores: 4                              # number of cores for mapping optimization
+  mappingProcessInterval: 0.15                  # seconds, regulate mapping frequency
+
+  # Surrounding map
+  surroundingkeyframeAddingDistThreshold: 1.0   # meters, regulate keyframe adding threshold
+  surroundingkeyframeAddingAngleThreshold: 0.2  # radians, regulate keyframe adding threshold
+  surroundingKeyframeDensity: 1.0               # meters, downsample surrounding keyframe poses   
+  surroundingKeyframeSearchRadius: 50.0         # meters, within n meters scan-to-map optimization (when loop closure disabled)

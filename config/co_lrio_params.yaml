@@ -1,0 +1,161 @@
+/**:
+  ros__parameters:
+    use_sim_time: true
+
+    # simulator mode
+    simulator_mode: false
+
+    # save file directory
+    save_directory: "/co_lrio_output"
+
+    # The unset/debug/info/warn/error/fatal log level = 0/10/20/30/40/50
+    loop_log_level: 30
+    loop_log_mini_level: 20
+    optimization_log_level: 30
+    optimization_log_mini_level: 20
+    uwb_log_level: 30
+    pcm_log_level: 30
+    map_log_mini_level: 30
+
+    # frames
+    lidar_frame: "/lidar_link"
+    baselink_frame: "/base_link"
+    odometry_frame: "/odom"
+    world_frame: "/world"
+
+    # LiDAR setting
+    sensor: velodyne
+    scan_topic: "velodyne_points"
+    n_scan: 16
+    horizon_scan: 1800
+    downsample_rate: 1
+    lidar_min_range: 1.0
+    lidar_max_range: 1000.0
+    
+    # GPS Setting
+    use_gnss: false
+    use_rtk: false
+    gps_cov_threshold: 0.3
+    use_gps_elevation: true
+
+    # feature threshold
+    extract_feature: false
+    edge_threshold: 1.0
+    surf_threshold: 0.1
+
+    # keyframe
+    keyframe_add_dist_threshold: 1.0
+    keyframe_add_angle_threshold: 0.2
+
+    # local map
+    use_ikd_tree: false
+    keyframes_density: 3.0 
+    keyframes_search_radius: 30.0
+
+    # odometry gicp setting
+    leaf_size: 0.4
+    epsilon: 0.005
+    max_iteration_time: 64
+    max_correspondence_distance: 5.0
+    ransac_outlier_reject_threshold: 1.0
+    ransac_iterations_time: 5
+
+    # loop detection setting
+    descriptor_type: "ScanContext"
+    distance_threshold: 0.25 # 0.45
+    candidates_num: 20
+    # descriptor_type: "LidarIris"
+    # distance_threshold: 0.35 # 0.5
+    # candidates_num: 20
+    max_radius: 80.0
+    exclude_recent_num: 200
+    history_keyframe_search_num: 25
+    fitness_score_threshold: 0.2
+    intra_icp_max_correspondence_distance: 30.0
+    intra_icp_iterations_time: 60
+    inter_icp_max_correspondence_distance: 10.0
+    inter_icp_iterations_time: 200
+
+    # cpu setting
+    number_of_cores: 2
+    loop_detection_interval: 0.01
+
+co_lrio_concentrated_mapping:
+  ros__parameters:
+    # loop detection setting
+    enable_loop: true
+    map_leaf_size: 0.4
+
+    # pcm configuration
+    loop_num_threshold: 1
+    use_pcm: false
+    pcm_threshold: 1.635 # 0.872, 1.635, 2.204, 3.455, 5.348, 7.840
+
+    # uwb configuration
+    enable_ranging: true
+    enable_ranging_outlier_threshold: true
+    ranging_outlier_threshold: 0.05 # 0.1, 0.2
+    minimum_ranging: 0.4
+    uwb_distance_thereshold_for_loop: 0.01
+
+    # optimization setting
+    enable_risam: false
+    use_global_near_map: false
+    global_near_map: 10.0
+
+    # cpu setting
+    parallel_cpu_core: 2
+    pub_tf_interval: 0.01
+    pub_global_map_interval: 20.0
+    global_map_visualization_radius: 100.0
+
+robot_2:
+  co_lrio_lidar_odometry:
+    ros__parameters:
+      # IMU Settings
+      imu_topic: "imu/data"
+      imu_acc_noise: 1.1692699862662088e-02
+      imu_gyr_noise: 1.0216647894856925e-02
+      imu_acc_bias_noise: 2.0413058951725431e-04
+      imu_gyr_bias_noise: 8.4514305618965801e-05 
+      imu_gravity: 9.79172227
+
+      # Extrinsics: T_lb (lidar -> imu)
+      extrinsic_l2i: [0.999555271477470, -0.022144088840141, 0.019972284013500, 0.007784371906518,
+                      0.021811658159079, 0.999622421673814, 0.016711502850279, -0.204024496061082,
+                      -0.020334812152698, -0.016268440573027, 0.999660862885093, -0.029045411719168,
+                      0.0, 0.0, 0.0, 1.0]
+
+robot_1:
+  co_lrio_lidar_odometry:
+    ros__parameters:
+      # IMU Settings
+      imu_topic: "imu/data"
+      imu_acc_noise: 1.0557715622632996e-02
+      imu_gyr_noise: 1.0084886221461694e-02
+      imu_acc_bias_noise: 2.3084619195565281e-04
+      imu_gyr_bias_noise: 9.8778648600726277e-05 
+      imu_gravity: 9.79172227
+
+      # Extrinsics: T_lb (lidar -> imu)
+      extrinsic_l2i: [0.999788733066439, -0.011076602750357, 0.017314410031844, 0.049603512631594,
+                      0.011161790315359, 0.999926027879647, -0.004831549793495, -0.092737045313503,
+                      -0.017259609709402, 0.005023788111429, 0.999838422528471, 0.015313004887488,
+                      0.0, 0.0, 0.0, 1.0]
+
+robot_0:
+  co_lrio_lidar_odometry:
+    ros__parameters:
+      # IMU Settings
+      imu_topic: "imu/data"
+      imu_acc_noise: 1.0919628856399554e-02
+      imu_gyr_noise: 1.0451440924866223e-02
+      imu_acc_bias_noise: 2.1851827629113259e-04
+      imu_gyr_bias_noise: 8.1770009351257180e-05 
+      imu_gravity: 9.79172227
+
+      # Extrinsics: T_lb (lidar -> imu)
+      extrinsic_l2i: [0.999457092910121, -0.031581578016513, 0.009387179146325, 0.047665376129920,
+                      0.031588741556450, 0.999500765853014, -6.154009751693067e-04, -0.144120962294238,
+                      -0.009363056101964, 9.115931250498338e-04, 0.999955754029662, 0.010086423805523,
+                      0.0, 0.0, 0.0, 1.0]

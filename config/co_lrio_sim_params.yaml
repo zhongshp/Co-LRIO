@@ -1,0 +1,122 @@
+/**:
+  ros__parameters:
+    use_sim_time : true
+
+    # simulator mode
+    simulator_mode: true
+
+    # odometry mode
+    only_odom: false
+
+    # save file directory
+    save_directory: "/co_lrio_output"
+    
+    # logger level, the unset/debug/info/warn/error/fatal log level = 0/10/20/30/40/50
+    rclcpp_log_level: 20
+    loop_verify_log_level: 30
+    optimization_log_level: 30
+    optimization_log_mini_level: 20
+    uwb_log_level: 20
+    pcm_log_level: 20
+    map_log_mini_level: 20
+
+    # frames
+    world_frame: "world"
+    odometry_frame: "/odom"
+    lidar_frame: "/lidar_link"
+    baselink_frame: "/base_link"
+
+    # LiDAR setting
+    sensor: velodyne
+    scan_topic: "velodyne_points"
+    n_scan: 16
+    lidar_min_range: 1.0
+    lidar_max_range: 1000.0
+
+    # IMU settings
+    imu_topic: "imu/data"
+    imu_acc_noise: 0.685999999
+    imu_gyr_noise: 0.0174532925
+    imu_acc_bias_noise: 0.0207990
+    imu_gyr_bias_noise: 0.003455575
+    imu_gravity: 9.8
+
+    # extrinsics (lidar to imu)
+    extrinsic_l2i: [0.0, 1.0, 0.0, 0.0,
+                    1.0, 0.0, 0.0, 0.0,
+                    0.0, 0.0, -1.0, 0.0,
+                    0.0, 0.0, 0.0, 1.0]
+
+    # GPS Setting
+    use_gnss: false
+    use_rtk: false
+    gps_cov_threshold: 0.3
+    use_gps_elevation: true
+
+    # feature threshold
+    extract_feature: false
+    edge_threshold: 1.5
+    surf_threshold: 0.05
+
+    # keyframe
+    keyframe_add_dist_threshold: 1.0
+    keyframe_add_angle_threshold: 0.2
+
+    # local map
+    use_ikd_tree: false
+    keyframes_density: 1.0
+    keyframes_search_radius: 50.0
+
+    # odometry gicp setting
+    leaf_size: 0.15
+    epsilon: 0.0001
+    max_iteration_time: 200
+    max_correspondence_distance: 10.0
+    ransac_outlier_reject_threshold: 1.0
+    ransac_iterations_time: 5
+
+    # loop detection setting
+    descriptor_type: "ScanContext"
+    distance_threshold: 0.4
+    candidates_num: 10
+    max_radius: 60.0
+    exclude_recent_num: 100
+    history_keyframe_search_num: 25
+    fitness_score_threshold: 0.2
+    intra_icp_max_correspondence_distance: 50.0
+    intra_icp_iterations_time: 100
+    inter_icp_max_correspondence_distance: 3.0
+    inter_icp_iterations_time: 100
+
+    # cpu setting
+    number_of_cores: 12
+    loop_detection_interval: 0.01
+
+co_lrio_concentrated_mapping:
+  ros__parameters:
+    # loop detection setting
+    enable_loop: false
+    map_leaf_size: 0.4
+
+    # pcm configuration
+    loop_num_threshold: 1
+    use_pcm: false
+    pcm_threshold: 0.872 # 0.872, 1.635, 2.204, 3.455, 5.348, 7.840
+
+    # optimization configuration
+    enable_risam: false
+    use_global_near_map: false
+    global_near_map: 10.0
+
+    # uwb configuration
+    enable_ranging: false
+    enable_ranging_outlier_threshold: true
+    ranging_outlier_threshold: 0.2
+    minimum_ranging: 0.4
+    uwb_distance_thereshold_for_loop: 2.0 
+
+    # cpu setting
+    parallel_cpu_core: 2
+    pub_tf_interval: 0.01
+    pub_global_map_interval: 20.0
+    global_map_visualization_radius: 100.0
