@@ -28,6 +28,28 @@ https://github.com/PengYu-Team/Co-LRIO/assets/41199568/b5c13697-fddd-48bf-9f64-d
   ros2 launch co_lrio run.launch.py
   ros2 bag play *your-bag-path*
   ```
+## Citation
+This work is published in IEEE ICRA conference, and please cite related papers:
+
+```
+@misc{zhong2024colrio,
+      title={CoLRIO: LiDAR-Ranging-Inertial Centralized State Estimation for Robotic Swarms}, 
+      author={Shipeng Zhong and Hongbo Chen and Yuhua Qi and Dapeng Feng and Zhiqiang Chen and Jin Wu and Weisong Wen and Ming Liu},
+      year={2024},
+      eprint={2402.11790},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
+
+```
+@article{feng2022s3e,
+  title={S3e: A large-scale multimodal dataset for collaborative slam},
+  author={Feng, Dapeng and Qi, Yuhua and Zhong, Shipeng and Chen, Zhiqiang and Jiao, Yudu and Chen, Qiming and Jiang, Tao and Chen, Hongbo},
+  journal={arXiv preprint arXiv:2210.13723},
+  year={2022}
+}
+```
 
 ## Acknowledgement
 
