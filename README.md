@@ -29,7 +29,7 @@ https://github.com/PengYu-Team/Co-LRIO/assets/41199568/b5c13697-fddd-48bf-9f64-d
   ros2 bag play *your-bag-path*
   ```
 ## Citation
-This work is published in IEEE ICRA conference, and please cite related papers:
+This work is published in IEEE ICRA 2024 conference, and please cite related papers:
 
 ```
 @misc{zhong2024colrio,
