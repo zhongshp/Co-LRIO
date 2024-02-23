@@ -52,7 +52,14 @@ This work is published in IEEE ICRA 2024 conference, and please cite related pap
 ```
 
 ## Acknowledgement
+  - We combined the front end of CoLRIO and the [DLO](https://github.com/vectr-ucla/direct_lidar_odometry) to achieve the 5th position in the [ICCV 2023 LiDAR-Inertial SLAM Challenge](https://superodometry.com/iccv23_challenge_LiI).
 
+  The Leaderboard is shown as follow:
+  ![Leaderboard](https://github.com/PengYu-Team/Co-LRIO/assets/41199568/72168f1d-9c74-43d1-90ce-12383131f464)
+
+  And the hardware and results are shown as follow:
+  ![results table](https://github.com/PengYu-Team/Co-LRIO/assets/41199568/f75e8660-acd9-4961-8964-2e3edba1e965)
+    
   - CoLRIO depends on [FAST-GICP](https://github.com/SMRT-AIST/fast_gicp) (Kenji Koide, Masashi Yokozuka, Shuji Oishi, and Atsuhiko Banno, "Voxelized GICP for fast and accurate 3D point cloud registration".).
 
   - CoLRIO depends on [GncOptimizer](https://github.com/borglab/gtsam/blob/3a1fe574683f608759eaff4636ab53def600ce84/gtsam/nonlinear/GncOptimizer.h#L45) (Yang, Antonante, Tzoumas, Carlone, "Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection").
