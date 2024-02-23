@@ -2,7 +2,7 @@
 
 A ROS2 package of CoLRIO: LiDAR-Ranging-Inertial Centralized State Estimation for Robotic Swarms. 
 
-https://github.com/PengYu-Team/Co-LRIO/assets/41199568/b5c13697-fddd-48bf-9f64-d3b8e1cb4978
+https://github.com/PengYu-Team/Co-LRIO/assets/41199568/cbd77518-45ca-46ac-a931-ca9a79c324c0
 
 ## Prerequisites
   - [Ubuntu ROS2 Foxy](http://wiki.ros.org/ROS/Installation) (Robot Operating System 2 on Ubuntu 20.04)
