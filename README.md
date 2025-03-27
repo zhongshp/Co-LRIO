@@ -4,6 +4,9 @@ A ROS2 package of CoLRIO: LiDAR-Ranging-Inertial Centralized State Estimation fo
 
 https://github.com/PengYu-Team/zhongshp/assets/41199568/81985d82-983c-4eca-898b-43e8f84e7b45
 
+## Author
+[Shipeng Zhong](https://github.com/zhongshp) & [Dapeng Feng](https://github.com/DapengFeng) & [Zhiqiang Chen](https://github.com/thisparticle)
+
 ## Prerequisites
   - [Ubuntu ROS2 Foxy](http://wiki.ros.org/ROS/Installation) (Robot Operating System 2 on Ubuntu 20.04)
   - CMake (Compilation Configuration Tool)
@@ -31,23 +34,29 @@ https://github.com/PengYu-Team/zhongshp/assets/41199568/81985d82-983c-4eca-898b-
 This work is published in IEEE ICRA 2024 conference, and please cite related papers:
 
 ```
-@misc{zhong2024colrio,
-      title={CoLRIO: LiDAR-Ranging-Inertial Centralized State Estimation for Robotic Swarms}, 
-      author={Shipeng Zhong and Hongbo Chen and Yuhua Qi and Dapeng Feng and Zhiqiang Chen and Jin Wu and Weisong Wen and Ming Liu},
-      year={2024},
-      eprint={2402.11790},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO}
-}
+@INPROCEEDINGS{10611672,
+  author={Zhong, Shipeng and Chen, Hongbo and Qi, Yuhua and Feng, Dapeng and Chen, Zhiqiang and Wu, Jin and Wen, Weisong and Liu, Ming},
+  booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={CoLRIO: LiDAR-Ranging-Inertial Centralized State Estimation for Robotic Swarms}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={3920-3926},
+  keywords={Simultaneous localization and mapping;Accuracy;Scalability;Collaboration;Computational efficiency;Sensors;Servers},
+  doi={10.1109/ICRA57147.2024.10611672}}
 ```
 
 ```
-@article{feng2022s3e,
-  title={S3e: A large-scale multimodal dataset for collaborative slam},
-  author={Feng, Dapeng and Qi, Yuhua and Zhong, Shipeng and Chen, Zhiqiang and Jiao, Yudu and Chen, Qiming and Jiang, Tao and Chen, Hongbo},
-  journal={arXiv preprint arXiv:2210.13723},
-  year={2022}
-}
+@ARTICLE{10740801,
+  author={Feng, Dapeng and Qi, Yuhua and Zhong, Shipeng and Chen, Zhiqiang and Chen, Qiming and Chen, Hongbo and Wu, Jin and Ma, Jun},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={S3E: A Multi-Robot Multimodal Dataset for Collaborative SLAM}, 
+  year={2024},
+  volume={9},
+  number={12},
+  pages={11401-11408},
+  keywords={Simultaneous localization and mapping;Robot sensing systems;Synchronization;Trajectory;Global navigation satellite system;Collaboration;Accuracy;Motion capture;Robot localization;Multi-robot systems;Multi-robot SLAM;data sets for SLAM;SLAM},
+  doi={10.1109/LRA.2024.3490402}}
 ```
 
 ## Acknowledgement
