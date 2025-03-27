@@ -2,7 +2,7 @@
 
 A ROS2 package of CoLRIO: LiDAR-Ranging-Inertial Centralized State Estimation for Robotic Swarms. 
 
-https://github.com/PengYu-Team/Co-LRIO/assets/41199568/81985d82-983c-4eca-898b-43e8f84e7b45
+https://github.com/PengYu-Team/zhongshp/assets/41199568/81985d82-983c-4eca-898b-43e8f84e7b45
 
 ## Prerequisites
   - [Ubuntu ROS2 Foxy](http://wiki.ros.org/ROS/Installation) (Robot Operating System 2 on Ubuntu 20.04)
@@ -16,18 +16,17 @@ https://github.com/PengYu-Team/Co-LRIO/assets/41199568/81985d82-983c-4eca-898b-4
   ```
   mkdir -p ~/cslam_ws/src
   cd ~/cslam_ws/src
-  git clone https://github.com/PengYu-Team/Co-LRIO.git
+  git clone https://github.com/zhongshp/Co-LRIO.git
   cd ../
   colcon build --symlink-install
   ```
 ## Run with Dataset
-  - [our dataset] TBD.
-
-  - [S3E dataset](https://github.com/PengYu-Team/S3E). The datasets are configured to run with default parameter.
+  - [S3E dataset](https://github.com/DapengFeng/S3E). The datasets are configured to run with default parameter.
   ```
   ros2 launch co_lrio run.launch.py
   ros2 bag play *your-bag-path*
   ```
+  - [our dataset] please also found it in [S3E dataset](https://github.com/DapengFeng/S3E).
 ## Citation
 This work is published in IEEE ICRA 2024 conference, and please cite related papers:
 
